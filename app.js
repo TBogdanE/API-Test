@@ -1,23 +1,23 @@
+const _APIKEY = "xXcNlWmBEO7LRyk91ausdjgseEEnjUkV";
+
 const getRandomGif = () => {
-  const apiKey = "xXcNlWmBEO7LRyk91ausdjgseEEnjUkV";
-  fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&limit=1`, {
+  fetch(`https://api.giphy.com/v1/gifs/random?api_key=${_APIKEY}&limit=1`, {
     mode: "cors",
   })
     .then((response) => {
       return response.json();
     })
     .then((response) => {
-      console.log(response.data.images.original.url);
       changeImage(response.data.images.original.url);
-      //refreshBtn(response.data.images.original.url);
-      //console.log(response.data.images.original.url);
+    })
+    .catch(() => {
+      console.error("Server not available");
     });
 };
 
 const searchGifOnline = (search) => {
-  const apiKey = "xXcNlWmBEO7LRyk91ausdjgseEEnjUkV";
   fetch(
-    `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${apiKey}&limit=1`,
+    `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${_APIKEY}&limit=1`,
     {
       mode: "cors",
     }
@@ -26,8 +26,10 @@ const searchGifOnline = (search) => {
       return response.json();
     })
     .then((response) => {
-      console.log(response.data[0].images.original.url);
       changeImage(response.data[0].images.original.url);
+    })
+    .catch(() => {
+      console.error("Server not available!");
     });
 };
 
