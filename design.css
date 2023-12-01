@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: orangered;
+}
+
+#page-title {
+    font-size: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    padding: 1em;
+}
+
+#box-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 20em;
+    height: 20em;
+}
+
+#giphy {
+    width: 100%;
+    max-height: 20em;
+    border-radius: 15px;
+    border: 0.5em solid red;
+}
+
+.btn {
+    background-color: transparent;
+    border: 0.1em solid white;
+    border-radius: 8px;
+    color: white;
+    padding: 0.5em;
+    margin: 2em;
+}
+
+#gif-input {
+    background-color: transparent;
+    border: 0.1em solid white;
+    border-radius: 7px;
+    padding: 0.5em;
+    color: white;
+}
